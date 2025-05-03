@@ -4,8 +4,6 @@
 declare namespace Cloudflare {
 	interface Env {
 		CACHE_KV: KVNamespace;
-		GITHUB_TOKEN: string;
-		GROQ_API_KEY: string;
 		MCP_OBJECT: DurableObjectNamespace<import("./src/index").MyMCP>;
 		VIEW_COUNTER: DurableObjectNamespace<import("./src/index").ViewCounterDO>;
 		DOCS_BUCKET: R2Bucket;
@@ -17,12 +15,6 @@ declare namespace Cloudflare {
 	}
 }
 interface Env extends Cloudflare.Env {}
-type StringifyValues<EnvType extends Record<string, unknown>> = {
-	[Binding in keyof EnvType]: EnvType[Binding] extends string ? EnvType[Binding] : string;
-};
-declare namespace NodeJS {
-	interface ProcessEnv extends StringifyValues<Pick<Cloudflare.Env, "GITHUB_TOKEN" | "GROQ_API_KEY">> {}
-}
 
 // Begin runtime types
 /*! *****************************************************************************

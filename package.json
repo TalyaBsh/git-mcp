@@ -58,6 +58,7 @@
     "@radix-ui/react-tooltip": "^1.2.4",
     "@react-router/fs-routes": "^7.5.2",
     "@remix-run/cloudflare": "^2.16.5",
+    "@remix-run/router": "^1.23.0",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "agents": "^0.0.84",
