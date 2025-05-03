@@ -1,18 +1,14 @@
-import { defineConfig } from 'vite';
-import { cloudflare } from '@cloudflare/vite-plugin';
-import { resolve } from 'path';
+import { reactRouter } from "@react-router/dev/vite";
+import { cloudflare } from "@cloudflare/vite-plugin";
+import tailwindcss from "@tailwindcss/vite";
+import { defineConfig } from "vite";
+import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
-  plugins: [cloudflare()],
-  resolve: {
-    alias: {
-      // Add this alias to help resolve the virtual module
-      'virtual:react-router/server-build': resolve(__dirname, '.react-router/types/+virtual.d.ts')
-    }
-  },
-  build: {
-    rollupOptions: {
-      external: ['virtual:react-router/server-build']
-    }
-  }
+  plugins: [
+    cloudflare({ viteEnvironment: { name: "ssr" } }),
+    tailwindcss(),
+    reactRouter(),
+    tsconfigPaths(),
+  ],
 });
