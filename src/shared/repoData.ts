@@ -133,13 +133,13 @@ export function getRepoDataFromUrl(url: string): MinimalRepoData {
   // Different URL patterns
   const patterns = [
     // repomcp.com/owner/repo
-    /^(?:www\.)?gitmcp\.io\/([^\/]+)\/([^\/]+)/,
+    /^(?:www\.)?repomcp\.com\/([^\/]+)\/([^\/]+)/,
     // owner.repomcp.com/repo
-    /^(?:www\.)?([^\/]+)\.gitmcp\.io\/([^\/]+)/,
+    /^(?:www\.)?([^\/]+)\.repomcp\.com\/([^\/]+)/,
     // owner.repomcp.com
-    /^(?:www\.)?([^\/]+)\.gitmcp\.io/,
+    /^(?:www\.)?([^\/]+)\.repomcp\.com/,
     // repomcp.com/docs
-    /^(?:www\.)?gitmcp\.io\/(docs)/,
+    /^(?:www\.)?repomcp\.com\/(docs)/,
     // Simple owner/repo format
     /^([a-zA-Z0-9_-]+)\/([a-zA-Z0-9_-]+)/,
   ];
