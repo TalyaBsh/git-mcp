@@ -39,8 +39,8 @@ export function getRepoData(requestData: RequestData): RepoData {
   }
   const path = fullUrl.pathname.split("/").filter(Boolean).join("/");
 
-  // Check for subdomain pattern: {subdomain}.gitmcp.io/{path}
-  if (requestHost.includes(".gitmcp.io")) {
+  // Check for subdomain pattern: {subdomain}.repomcp.com/{path}
+  if (requestHost.includes(".repomcp.com")) {
     const subdomain = requestHost.split(".")[0];
     logData.owner = subdomain;
     logData.repo = path;
@@ -61,12 +61,12 @@ export function getRepoData(requestData: RequestData): RepoData {
       urlType: "subdomain",
     };
   }
-  // Check for github repo pattern: gitmcp.io/{owner}/{repo}, HOST_TEMP_URL/{owner}/{repo},
+  // Check for github repo pattern: repomcp.com/{owner}/{repo}, HOST_TEMP_URL/{owner}/{repo},
   // or git-mcp-git-{preview}-git-mcp.vercel.app/{owner}/{repo}
   else if (
-    requestHost === "gitmcp.io" ||
+    requestHost === "repomcp.com" ||
     requestHost === HOST_TEMP_URL ||
-    requestHost === "git-mcp.idosalomon.workers.dev" ||
+    requestHost === "git-mcp.talya7625.workers.dev" ||
     requestHost.includes("localhost")
   ) {
     // Extract owner/repo from path
@@ -124,21 +124,21 @@ export function getRepoDataFromUrl(url: string): MinimalRepoData {
   const urlWithoutProtocol = url.replace(/^https?:\/\//, "");
 
   const urlReference = urlWithoutProtocol
-    .replace(".github.io", ".gitmcp.io")
-    .replace(/^github\.com/, "gitmcp.io")
-    .replace(HOST_TEMP_URL, "gitmcp.io")
-    .replace("git-mcp.idosalomon.workers.dev", "gitmcp.io")
-    .replace(/^localhost:?[0-9]+/, "gitmcp.io");
+    .replace(".github.io", ".repomcp.com")
+    .replace(/^github\.com/, "repomcp.com")
+    .replace(HOST_TEMP_URL, "repomcp.com")
+    .replace("git-mcp.talya7625.workers.dev", "repomcp.com")
+    .replace(/^localhost:?[0-9]+/, "repomcp.com");
 
   // Different URL patterns
   const patterns = [
-    // gitmcp.io/owner/repo
+    // repomcp.com/owner/repo
     /^(?:www\.)?gitmcp\.io\/([^\/]+)\/([^\/]+)/,
-    // owner.gitmcp.io/repo
+    // owner.repomcp.com/repo
     /^(?:www\.)?([^\/]+)\.gitmcp\.io\/([^\/]+)/,
-    // owner.gitmcp.io
+    // owner.repomcp.com
     /^(?:www\.)?([^\/]+)\.gitmcp\.io/,
-    // gitmcp.io/docs
+    // repomcp.com/docs
     /^(?:www\.)?gitmcp\.io\/(docs)/,
     // Simple owner/repo format
     /^([a-zA-Z0-9_-]+)\/([a-zA-Z0-9_-]+)/,

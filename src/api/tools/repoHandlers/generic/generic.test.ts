@@ -11,7 +11,7 @@ describe("Generic Repo Handler", () => {
   beforeAll(() => {
     mockMcp = new MockMcp();
     toolsModule
-      .getMcpTools(mockEnv, "docs.gitmcp.io", "https://docs.gitmcp.io", {
+      .getMcpTools(mockEnv, "docs.repomcp.com", "https://docs.repomcp.com", {
         waitUntil: () => Promise.resolve(),
       })
       .forEach((tool) => {

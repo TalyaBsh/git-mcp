@@ -23,15 +23,15 @@ export function getRepoData(url: string): {
     /^(?:www\.)?github\.com\/([^\/]+)\/([^\/]+)/,
     // owner.github.io/repo
     /^(?:www\.)?([^\/]+)\.github\.io\/([^\/]+)/,
-    // gitmcp.io/owner/repo
+    // repomcp.com/owner/repo
     /^(?:www\.)?gitmcp\.io\/([^\/]+)\/([^\/]+)/,
-    // owner.gitmcp.io/repo
+    // owner.repomcp.com/repo
     /^(?:www\.)?([^\/]+)\.gitmcp\.io\/([^\/]+)/,
-    // owner.gitmcp.io
+    // owner.repomcp.com
     /^(?:www\.)?([^\/]+)\.gitmcp\.io/,
     // owner.github.io
     /^(?:www\.)?([^\/]+)\.github\.io/,
-    // gitmcp.io/docs
+    // repomcp.com/docs
     /^(?:www\.)?gitmcp\.io\/(docs)/,
     // Simple owner/repo format
     /^([a-zA-Z0-9_-]+)\/([a-zA-Z0-9_-]+)/,

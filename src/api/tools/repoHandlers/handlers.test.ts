@@ -7,11 +7,11 @@ describe("getHandlerByRepoData", () => {
   it("should return the correct handler for three.js", () => {
     const requests: RequestData[] = [
       {
-        requestHost: "gitmcp.io",
+        requestHost: "repomcp.com",
         requestUrl: "/mrdoob/three.js",
       },
       {
-        requestHost: "mrdoob.gitmcp.io",
+        requestHost: "mrdoob.repomcp.com",
         requestUrl: "/three.js",
       },
     ];
@@ -24,11 +24,11 @@ describe("getHandlerByRepoData", () => {
   it("should return the generic handler for generic repos", () => {
     const requests: RequestData[] = [
       {
-        requestHost: "gitmcp.io",
+        requestHost: "repomcp.com",
         requestUrl: "/docs",
       },
       {
-        requestHost: "docs.gitmcp.io",
+        requestHost: "docs.repomcp.com",
         requestUrl: "/",
       },
     ];
@@ -41,11 +41,11 @@ describe("getHandlerByRepoData", () => {
   it("should not return the generic handler urls that only look generic ", () => {
     const requests: RequestData[] = [
       {
-        requestHost: "docs.gitmcp.io",
+        requestHost: "docs.repomcp.com",
         requestUrl: "/some-repo",
       },
       {
-        requestHost: "gitmcp.io",
+        requestHost: "repomcp.com",
         requestUrl: "/docs/other-path",
       },
     ];
@@ -57,7 +57,7 @@ describe("getHandlerByRepoData", () => {
   });
   it("should return the react-router handler for react-router", () => {
     const repoData = getRepoData({
-      requestHost: "gitmcp.io",
+      requestHost: "repomcp.com",
       requestUrl: "/remix-run/react-router",
     });
     const handler = getHandlerByRepoData(repoData);
@@ -66,11 +66,11 @@ describe("getHandlerByRepoData", () => {
   it("should return the default handler for other repos", () => {
     const requests: RequestData[] = [
       {
-        requestHost: "gitmcp.io",
+        requestHost: "repomcp.com",
         requestUrl: "/some-owner/some-repo",
       },
       {
-        requestHost: "owner.gitmcp.io",
+        requestHost: "owner.repomcp.com",
         requestUrl: "/some-repo",
       },
     ];

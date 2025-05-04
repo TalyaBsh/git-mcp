@@ -83,7 +83,7 @@ export function MCPProvider(props: {
     }
     return {
       serverNameText: repoName ? `${repoName} docs` : "Github docs",
-      serverUrl: ["https://gitmcp.io", owner, repo].filter(Boolean).join("/"),
+      serverUrl: ["https://repomcp.com", owner, repo].filter(Boolean).join("/"),
       serverName: repoName ? `${repoName} Docs` : "MCP Docs",
     };
   }, [owner, repo]);

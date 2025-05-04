@@ -76,7 +76,9 @@ export const MCPServerManager = ({
       return null;
     }
 
-    const newUrl = ["https://gitmcp.io", owner, repo].filter(Boolean).join("/");
+    const newUrl = ["https://repomcp.com", owner, repo]
+      .filter(Boolean)
+      .join("/");
 
     const name = repo ? `${repo} Docs` : "MCP Docs";
 
@@ -281,11 +283,11 @@ export const MCPServerManager = ({
                   onChange={(e) =>
                     setNewServer({ ...newServer, url: e.target.value })
                   }
-                  placeholder="https://gitmcp.io/microsoft/playwright-mcp"
+                  placeholder="https://repomcp.com/microsoft/playwright-mcp"
                   className="relative z-0 placeholder:text-muted-foreground/60"
                 />
                 <p className="text-xs text-muted-foreground/80">
-                  A gitmcp.io server, a github.com repository, or a github.io
+                  A repomcp.com server, a github.com repository, or a github.io
                   pages site
                 </p>
               </div>

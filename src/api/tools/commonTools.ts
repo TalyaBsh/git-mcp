@@ -52,7 +52,7 @@ export async function fetchDocumentation({
   let docsBranch: string = "";
   let blockedByRobots = false;
 
-  // Check for subdomain pattern: {subdomain}.gitmcp.io/{path}
+  // Check for subdomain pattern: {subdomain}.repomcp.com/{path}
   if (urlType === "subdomain") {
     // Map to github.io
     const githubIoDomain = `${owner}.github.io`;

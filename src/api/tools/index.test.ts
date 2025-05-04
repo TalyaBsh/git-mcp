@@ -41,8 +41,8 @@ describe("Tools Module", () => {
     }[] = [
       // default handler
       {
-        host: "gitmcp.io",
-        url: "https://gitmcp.io/myorg/myrepo",
+        host: "repomcp.com",
+        url: "https://repomcp.com/myorg/myrepo",
         expectedTools: {
           fetch_myrepo_documentation: {
             description:
@@ -64,8 +64,8 @@ describe("Tools Module", () => {
       },
       // default handler - subdomain
       {
-        host: "myorg.gitmcp.io",
-        url: "https://myorg.gitmcp.io/myrepo",
+        host: "myorg.repomcp.com",
+        url: "https://myorg.repomcp.com/myrepo",
         expectedTools: {
           fetch_myrepo_documentation: {
             description:
@@ -87,8 +87,8 @@ describe("Tools Module", () => {
       },
       // generic handler
       {
-        host: "docs.gitmcp.io",
-        url: "https://docs.gitmcp.io",
+        host: "docs.repomcp.com",
+        url: "https://docs.repomcp.com",
         expectedTools: {
           fetch_generic_documentation: {
             description:
@@ -114,8 +114,8 @@ describe("Tools Module", () => {
       },
       // three.js handler
       {
-        host: "gitmcp.io",
-        url: "https://gitmcp.io/mrdoob/three.js",
+        host: "repomcp.com",
+        url: "https://repomcp.com/mrdoob/three.js",
         expectedTools: {
           fetch_threejs_urls_inside_docs: {
             description:

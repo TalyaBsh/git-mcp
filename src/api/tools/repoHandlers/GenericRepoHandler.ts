@@ -94,7 +94,7 @@ class GenericRepoHandler implements RepoHandler {
             owner,
             repo,
             urlType: "github",
-            host: "gitmcp.io",
+            host: "repomcp.com",
           };
           return fetchDocumentation({ repoData, env, ctx });
         },
@@ -117,7 +117,7 @@ class GenericRepoHandler implements RepoHandler {
             owner,
             repo,
             urlType: "github",
-            host: "gitmcp.io",
+            host: "repomcp.com",
           };
           return searchRepositoryDocumentation({ repoData, query, env, ctx });
         },
@@ -146,7 +146,7 @@ class GenericRepoHandler implements RepoHandler {
             owner,
             repo,
             urlType: "github",
-            host: "gitmcp.io",
+            host: "repomcp.com",
           };
           return searchRepositoryCode({ repoData, query, page, env, ctx });
         },

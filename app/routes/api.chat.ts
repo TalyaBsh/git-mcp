@@ -113,8 +113,8 @@ export async function action({
   const mcp = new MCPClientManager("my-agent", "1.0.0");
   for (const originalUrl of mcpServers.map((mcpServer) => mcpServer.url)) {
     const url = originalUrl.replace(
-      "https://gitmcp.io",
-      "https://git-mcp.idosalomon.workers.dev",
+      "https://repomcp.com",
+      "https://git-mcp.talya7625.workers.dev",
     );
     try {
       const { id } = await mcp.connect(url);

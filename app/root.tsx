@@ -14,24 +14,24 @@ export default function App() {
           content="Instantly create an MCP server for any GitHub project"
         />
 
-        <meta property="og:url" content="https://gitmcp.io/" />
+        <meta property="og:url" content="https://repomcp.com/" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="GitMCP" />
         <meta
           property="og:description"
           content="Instantly create an MCP server for any GitHub project"
         />
-        <meta property="og:image" content="https://gitmcp.io/img/OG.png" />
+        <meta property="og:image" content="https://repomcp.com/img/OG.png" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta property="twitter:domain" content="gitmcp.io" />
-        <meta property="twitter:url" content="https://gitmcp.io/" />
+        <meta property="twitter:domain" content="repomcp.com" />
+        <meta property="twitter:url" content="https://repomcp.com/" />
         <meta name="twitter:title" content="GitMCP" />
         <meta
           name="twitter:description"
           content="Instantly create an MCP server for any GitHub project"
         />
-        <meta name="twitter:image" content="https://gitmcp.io/img/OG.png" />
+        <meta name="twitter:image" content="https://repomcp.com/img/OG.png" />
         {/* All `meta` exports on all routes will render here */}
         <Meta />
 
