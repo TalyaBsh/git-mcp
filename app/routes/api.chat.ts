@@ -117,13 +117,22 @@ export async function action({
       "https://git-mcp.talya7625.workers.dev",
     );
     try {
+      console.log("Attempting to connect to MCP server:", url);
       const { id } = await mcp.connect(url);
+      console.log("Connected to MCP server, id:", id);
       if (mcp.mcpConnections[id]?.connectionState === "ready") {
+        console.log("MCP connection ready, getting tools");
         const mcptools = await mcp.unstable_getAITools();
+        console.log("Got MCP tools:", Object.keys(mcptools).length);
         tools = { ...tools, ...mcptools };
       }
     } catch (error) {
       console.error("Error getting tools for url", url, error);
+      // Log more details about the error
+      if (error instanceof Error) {
+        console.error("Error message:", error.message);
+        console.error("Error stack:", error.stack);
+      }
     }
   }
 
