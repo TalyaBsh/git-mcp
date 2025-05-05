@@ -12,7 +12,8 @@ import { useCallback } from "react";
 import { useApiKeys } from "./api-keys-provider";
 
 //const CHAT_API_URL = "https://chat-api-worker.idosalomon.workers.dev/api/chat";
-const CHAT_API_URL = "https://git-mcp.talya7625.workers.dev/api/chat";
+//const CHAT_API_URL = "https://git-mcp.talya7625.workers.dev/api/chat";
+const CHAT_API_URL = "/api/chat";
 
 export default function Chat() {
   const [selectedModel, setSelectedModel] = useLocalStorage<modelID>(
