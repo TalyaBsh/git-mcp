@@ -114,6 +114,11 @@ export default {
     const url = new URL(request.url);
     const pathname = url.pathname;
 
+    // Add logging here
+    console.log("Request URL:", url.toString());
+    console.log("Request path:", pathname);
+    console.log("Accept header:", request.headers.get("accept"));
+
     if (
       env.ENVIRONMENT === "test" &&
       request.method === "POST" &&
@@ -136,11 +141,17 @@ export default {
         return handleBadgeRequest(request, env, owner, repo);
       }
     }
+    // Around line 141, before the isSse check
+    console.log("About to check SSE condition for path:", pathname);
 
     const isStreamMethod =
       request.headers.get("accept")?.includes("text/event-stream") &&
       !!url.pathname &&
       url.pathname !== "/";
+
+    // Add this line after the isSse check
+    console.log("SSE check result:", isSse);
+
     const isMessage =
       request.method === "POST" &&
       url.pathname.includes("/message") &&
