@@ -353,14 +353,22 @@ export async function searchRepositoryDocumentation({
   searchQuery: string;
   content: { type: "text"; text: string }[];
 }> {
+  console.log("searchRepositoryDocumentation (commonTools.ts)");
   if (!env.DOCS_BUCKET) {
+    console.log("DOCS_BUCKET is not available in environment");
     throw new Error("DOCS_BUCKET is not available in environment");
   }
+  console.log("DOCS_BUCKET is available in environment");
+  console.log("env.DOCS_BUCKET = ", env.DOCS_BUCKET);
   const docsInR2 = !!(await env.DOCS_BUCKET.head(
     `${repoData.owner}/${repoData.repo}/llms.txt`,
   ));
+  console.log("docsInR2 = ", docsInR2);
+  console.log("env.DOCS_BUCKET = ", env.DOCS_BUCKET);
   if (docsInR2) {
+    console.log("docsInR2 = ", docsInR2);
     try {
+      console.log("trying autoRag searchRepositoryDocumentationAutoRag");
       const autoragResult = await searchRepositoryDocumentationAutoRag({
         repoData,
         query,
@@ -382,6 +390,7 @@ export async function searchRepositoryDocumentation({
     }
   }
 
+  console.log("fallback to naive search");
   return await fallbackSearch({
     repoData,
     query,
