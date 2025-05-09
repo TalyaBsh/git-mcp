@@ -74,6 +74,9 @@ importers:
       '@remix-run/cloudflare':
         specifier: ^2.16.5
         version: 2.16.5(@cloudflare/workers-types@4.20250510.0)(typescript@5.8.3)
+      '@remix-run/router':
+        specifier: ^1.23.0
+        version: 1.23.0
       '@types/react':
         specifier: ^19.1.2
         version: 19.1.2
